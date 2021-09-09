@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link href="e-commerce.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<script>
+    
+    function create_submenu(val)
+    {
+        var dict_w={shoe:["Running Shoes","Sneakers","Flats","Boat Shoes","Heels"],Apparel:["Tops","dresses","Bottoms","Sarees","sweaters"],Accessories:["Face Mask","Hand Bags","Totes"]}
+        var dict_m={shoe:["Running Shoes","Sneakers","Flats","slip ons"],Apparel:["Formal shirts","casual shirts","Tees","pants","Sweaters"],Accessories:["Bags","Belt","Tie","Face Mask"]}
+        var dict_Mo={Brand:["OPPO","Redmi","MicroMax","Nokia","Moto","samsung"],Accessories:["Headset","Screen Guard","Flip Cover","Chargers","Power Bank"],Best:["phones under Rs10000","phones under 20000"]}
+        var name = document.getElementById('nav_subcontainer').className
+            if(val==1)
+            {   
+                if(name=="nav_men")
+                {
+                    document.getElementById('nav_subcontainer').innerHTML=''
+                }
+                else
+                {
+                    document.getElementById('nav_subcontainer').className='nav_men'
+                    setMenu(dict_m)
+                }
+            }
+            else if(val==2)
+            {
+                if(name=="nav_women")
+                {
+                    document.getElementById('nav_subcontainer').innerHTML=''
+                }
+                else
+                {
+                    document.getElementById('nav_subcontainer').className='nav_women'
+                    setMenu(dict_w)
+                }
+                
+            }
+            else if(val==3)
+            {
+                if(name=="nav_mobiles")
+                {
+                    document.getElementById('nav_subcontainer').innerHTML=''
+                }
+                else
+                {
+                    document.getElementById('nav_subcontainer').className='nav_mobiles'
+                    setMenu(dict_Mo)
+                }
+            }
+        
+       
+    }
+
+    function setMenu(dict_val)
+    {
+        var key = Object.keys(dict_val)
+            text="<ul class='sub-list'>"
+            for(i=0;i<key.length;i++)
+            {
+                
+                text+='<li class="navlist_1"><ul><div class="header"><h4>'+key[i]+"</h4></div>"
+                console.log(key[i], dict_val[key[i]].length)   
+                for(j=0;j<dict_val[key[i]].length;j++)
+                {   
+                    text+="<li class='nav_sublist'><a href='product-details.html'>"+dict_val[key[i]][j]+"</a></li>"
+                }
+                   text +="</ul></li>"
+            }
+            text +="</ul>";
+            document.getElementById('nav_subcontainer').innerHTML=text
+
+    }
+    function slider()
+    {
+        var image=document.getElementById('slideImg');
+        var images=new Array("women2.jpg","footwear.jpg","mobiles.png","skin.png")
+        var len=images.length;
+        var i=0
+        setInterval(function(){
+            if(i>len-1)
+            {
+                i=0
+            }
+            image.src=images[i];
+            i++;
+        },2000);
+       
+    }
+</script>
+<body onload='slider()'>
+    <section id="menu">
+        <div id="container">
+            <nav id="navbar_container">
+                <ul class="navlist_1">
+                    <li ><a href="#" onclick="create_submenu(1)">Men</a></li>
+                    <li ><a href="#" onclick="create_submenu(2)">Women</a></li>
+                    <li ><a href="#" onclick="create_submenu(3)">Mobiles</a></li>
+                 </ul> 
+                 <div class="navbar_logo"><img src="fashion_logo.png"></div>  
+                 <ul  class="navlist_2">
+                    <li><a href="#" onclick="create_submenu(4)">Skin & Hair Care</a></li>
+                    <li><a href="#" onclick="create_submenu(5)"></a>Gifting</li>
+                    <li><a href="check-out page.html" ><i class="fa fa-shopping-bag" aria-hidden="true"></i></a></li>
+                    <li><a href="account.html" ><i class="fa fa-user" aria-hidden="true"></i></a></li>                    
+                </ul>                
+            </nav>
+            <div id="nav_subcontainer">
+          
+            </div>
+        </div>    
+</section>
+<section id="carousel">
+    <div class="carousel-container">
+        <div id="banner">
+            <img src="mencol.jpg" id="slideImg" >            
+        </div>
+    </div>
+</section>
+<section id="watch">
+  <div class="heading">
+    <h2>Choose it Right</h2></div>
+    <div class="watches-inner">
+        <div class="carousel-item">
+          <img class="slideImg1" src="JEWLLERY------web.webp" alt="First slide"/>
+          
+        </div>
+        <div class="carousel-item">
+          <img class="slideImg1" src="SUNGLASSES-----web.webp" alt="Second slide"/>
+        </div>
+        <div class="carousel-item">
+          <img class="slideImg1" src="WALLETS---web.webp" alt="Third slide"/>
+        </div>
+        <div class="carousel-item">
+            <img class="slideImg1" src="TRAVEL-&-LUGGAGE---web.webp" alt="Third slide"/>
+          </div>
+      </div>
+</section>
+<section id="mens_clothing">
+  <div class="heading">
+    <h2>Popular picks in Mens Clothing</h2></div>
+    <div class="carousel-inner">
+        <div class="carousel-item">
+          <img class="slideImg1" src="men1.png"/>
+          <div class="card-text">
+            <h4>Men's Shirt</h4>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img class="slideImg1" src="men1.png" alt="Second slide"/>
+          <div class="card-text">
+            <h4>Men's Shirt</h4>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p>Rs.500</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img class="slideImg1" src="men1.png" alt="Third slide"/>
+          <div class="card-text">
+            <h4>Men's Shirt</h4>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p>Rs.500</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+            <img class="slideImg1" src="men1.png" alt="Third slide"/>
+            <div class="card-text">
+              <h4>Men's Shirt</h4>
+              <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+              </div>
+              <p>Rs.500</p>
+            </div>
+        </div>
+      </div>
+</section>
+<section id="womens_clothing">
+  <div class="heading">
+    <h2>Exclusive collection in Women's wear</h2></div>
+    <div class="womencarousel-inner">
+        <div class="carousel-item">
+          <img class="slideImg1" src="women-dress.jpg" alt="First slide"/>
+          <div class="card-text">
+            <h4>Men's Shirt</h4>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p>Rs.500</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img class="slideImg1" src="women-dress1.jpg"/>
+          <div class="card-text">
+            <h4>Women maxi dress</h4>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p>Rs.500</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img class="slideImg1" src="women-dress2.jpg" />
+          <div class="card-text">
+            <h4>women dress</h4>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p>Rs.500</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+            <img class="slideImg1" src="women-dress3.jpg" />
+            <div class="card-text">
+              <h4>Women dress</h4>
+              <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+              </div>
+              <p>Rs.500</p>
+            </div>
+          </div>
+      </div>
+</section>
+<section id="mobiles">
+    <div class="heading">
+    <h2>Top picks in Mobile phones</h2></div>
+    <div class="mobile-inner">
+        <div class="carousel-item">
+          <img class="slideImg1" src="VIVO-Y91.jpg" alt="First slide"/>
+          <div class="card-text">
+            <h4>Vivo Y91</h4>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p>Rs.7500</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img class="slideImg1" src="Redmi-9jpg.jpg"/>
+          <div class="card-text">
+            <h4>Redmi 9</h4>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p>Rs.15000</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img class="slideImg1" src="Apple-12-Pro-Max.jpg"/>
+          <div class="card-text">
+            <h4>Apple 12 pro Max</h4>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p>Rs.120,000</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+            <img class="slideImg1" src="Samsung-Galaxy-Z.jpg" />
+            <div class="card-text">
+              <h4>Samsung Galaxy -z flip Phone</h4>
+              <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+              </div>
+              <p>Rs.84,500</p>
+            </div>
+          </div>
+      </div>
+</section>
+<section id="Accessories">
+    <div class="heading">
+    <h2>Popular in Accessories</h2></div>
+    <div class="Accessories-inner">
+        <div class="carousel-item">
+          <img class="slideImg1" src="bag-1.jpg" alt="First slide"/>
+          <div class="card-text">
+            <h4>Wild craft Bag</h4>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p>Rs.500</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img class="slideImg1" src="wallet1.jpg" alt="Second slide"/>
+          <div class="card-text">
+            <h4>Wallet</h4>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p>Rs.500</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img class="slideImg1" src="bag.jpg" alt="Third slide"/>
+          <div class="card-text">
+            <h4>Pink hand-bag</h4>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p>Rs.500</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+            <img class="slideImg1" src="sunglass.jpg"/>
+            <div class="card-text">
+              <h4>Sun glass</h4>
+              <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+              </div>
+              <p>Rs.500</p>
+            </div>
+          </div>
+      </div>
+</section>
+<section id="banner_img">
+    <img src="skin care.jpg">
+</section>
+<section id="watch">
+  <div class="heading">
+    <h2>Branded Watches</h2>
+  </div>
+    <div class="watches-inner">
+        <div class="carousel-item">
+          <img class="slideImg1" src="titan.webp" alt="First slide"/>
+          <div class="card-text">
+            <h4>Titan Raga</h4>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p>Rs.2500</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img class="slideImg1" src="soanta.jpg"/>
+          <div class="card-text">
+            <h4>sonata</h4>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p>Rs.500</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img class="slideImg1" src="tommy.webp"/>
+          <div class="card-text">
+            <h4>Tommy&hilfiger</h4>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p>Rs.1500</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+            <img class="slideImg1" src="IWC-Schaffhausen.webp" />
+            <div class="card-text">
+              <h4>Soanta analog</h4>
+              <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+              </div>
+              <p>Rs.5000</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="slideImg1" src="fasttrack.webp" alt="Third slide"/>
+            <div class="card-text">
+              <h4>fasttrack</h4>
+              <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+              </div>
+              <p>Rs.2500</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="slideImg1" src="Chopard.jpg" alt="Third slide"/>
+            <div class="card-text">
+              <h4>Chopard</h4>
+              <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+              </div>
+              <p>Rs.14500</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="slideImg1" src="IWC-Schaffhausen.webp" alt="Third slide"/>
+            <div class="card-text">
+              <h4>IWC-Schaffhausen</h4>
+              <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+              </div>
+              <p>Rs.5000</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="slideImg1" src="IWC-Schaffhausen.webp" alt="Third slide"/>
+            <div class="card-text">
+              <h4>fossil Watch</h4>
+              <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+              </div>
+              <p>Rs.5000</p>
+            </div>
+          </div>
+      </div>
+</section>
+<section id="footer">
+    <div class="footer-container">
+        <div class="footer-row">
+          <div class="footer-col">
+            <h4>Help</h4>
+            <ul>
+              <li>0-00134-54325</li>
+              <li>8034-345-555</li>
+              <li>help@beep.com</li>
+              <li>Returns&Exchanges</li>
+              <li>Faqs & contact Us</li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Shop</h4>
+            <ul>
+              <li>Men's Apparel</li>
+              <li>Women's Apparel</li>
+              <li>Accessories</li>
+              <li>Mobile</li>
+              <li>Gift Card</li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <ul>
+              <li>Affiliates</li>
+              <li>Careers</li>
+              <li>press</li>
+            </ul>
+          </div>
+        </div>
+    </div>
+    <script>
+   var mq=window.matchMedia('(max-width: 750px)')
+    showmenu(mq);
+    mq.addEventListener('change',showmenu)
+
+    function showmenu(mq)
+    {      
+      if(mq.matches)
+      {
+        var result;
+        var div = document.getElementById('navbar_container').children
+        var len=div.length;
+        for(i=0;i<len;i++)
+        {
+          if(div[i].nodeName == 'UL')
+            result += div[i]
+        }
+       console.log(result);
+      }
+      else{
+        
+        var div = document.getElementById('navbar_container').children
+        var len=div.length;
+        for(i=0;i<len;i++)
+        {
+          if(div[i].nodeName == 'UL')
+            div[i].className =' navlist_'+i
+        }    
+
+      }
+    }
+    </script>
+</section>
+</body>
+</html>
